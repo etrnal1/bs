@@ -1,0 +1,118 @@
+Searching 8914 files for "'/home'"
+
+/Users/eternal/code/bs/bbs/app/Http/Controllers/Auth/LoginController.php:
+   26       * @var string
+   27       */
+   28:     protected $redirectTo = '/';
+   29  
+   30      /**
+
+/Users/eternal/code/bs/bbs/app/Http/Controllers/Auth/RegisterController.php:
+   28       * @var string
+   29       */
+   30:     protected $redirectTo = '/';
+   31  
+   32      /**
+
+/Users/eternal/code/bs/bbs/app/Http/Controllers/Auth/ResetPasswordController.php:
+   26       * @var string
+   27       */
+   28:     protected $redirectTo = '/home';
+   29  
+   30      /**
+
+/Users/eternal/code/bs/bbs/app/Http/Middleware/RedirectIfAuthenticated.php:
+   19      {
+   20          if (Auth::guard($guard)->check()) {
+   21:             return redirect('/home');
+   22          }
+   23  
+
+/Users/eternal/code/bs/bbs/storage/framework/views/554332f4cbcba93d3b4d8040efb18e6fa47562df.php:
+   70                  <div class="top-right links">
+   71                      <?php if(auth()->guard()->check()): ?>
+   72:                         <a href="<?php echo e(url('/home')); ?>">Home</a>
+   73                      <?php else: ?>
+   74                          <a href="<?php echo e(route('login')); ?>">Login</a>
+
+/Users/eternal/code/bs/bbs/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php:
+   16          }
+   17  
+   18:         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+   19      }
+   20  }
+
+/Users/eternal/code/bs/bbs/vendor/symfony/http-foundation/Tests/RequestTest.php:
+ 1607                  ),
+ 1608                  '/foo%20bar',
+ 1609:                 '/home',
+ 1610              ),
+ 1611              array(
+ ....
+ 1617                  ),
+ 1618                  '/foo%20bar/app.php',
+ 1619:                 '/home',
+ 1620              ),
+ 1621              array(
+
+8 matches across 7 files
+
+
+Searching 8914 files for "'/home'"
+
+/Users/eternal/code/bs/bbs/app/Http/Controllers/Auth/LoginController.php:
+   26       * @var string
+   27       */
+   28:     protected $redirectTo = '/';
+   29  
+   30      /**
+
+/Users/eternal/code/bs/bbs/app/Http/Controllers/Auth/RegisterController.php:
+   28       * @var string
+   29       */
+   30:     protected $redirectTo = '/';
+   31  
+   32      /**
+
+/Users/eternal/code/bs/bbs/app/Http/Controllers/Auth/ResetPasswordController.php:
+   26       * @var string
+   27       */
+   28:     protected $redirectTo = '/';
+   29  
+   30      /**
+
+/Users/eternal/code/bs/bbs/app/Http/Middleware/RedirectIfAuthenticated.php:
+   19      {
+   20          if (Auth::guard($guard)->check()) {
+   21:             return redirect('/');
+   22          }
+   23  
+
+/Users/eternal/code/bs/bbs/storage/framework/views/554332f4cbcba93d3b4d8040efb18e6fa47562df.php:
+   70                  <div class="top-right links">
+   71                      <?php if(auth()->guard()->check()): ?>
+   72:                         <a href="<?php echo e(url('/home')); ?>">Home</a>
+   73                      <?php else: ?>
+   74                          <a href="<?php echo e(route('login')); ?>">Login</a>
+
+/Users/eternal/code/bs/bbs/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php:
+   16          }
+   17  
+   18:         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+   19      }
+   20  }
+
+/Users/eternal/code/bs/bbs/vendor/symfony/http-foundation/Tests/RequestTest.php:
+ 1607                  ),
+ 1608                  '/foo%20bar',
+ 1609:                 '/home',
+ 1610              ),
+ 1611              array(
+ ....
+ 1617                  ),
+ 1618                  '/foo%20bar/app.php',
+ 1619:                 '/home',
+ 1620              ),
+ 1621              array(
+
+8 matches across 7 files
