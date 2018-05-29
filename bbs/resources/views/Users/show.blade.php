@@ -15,13 +15,12 @@
 						
 					</div>
 					<div class="media-body">
-						<hr>
-						<h4>个人简介</h4>
-						 <p>你好</p>
-
 						 <hr>
-						 <h4><strong>注册于</strong></h4>
-							<p> January 01 1901</p>
+                        <h4><strong>个人简介</strong></h4>
+                        <p>{{ $user->introduction }}</p>
+                        <hr>
+                        <h4><strong>注册于</strong></h4>
+                       
 					</div>
 					
 				</div>
