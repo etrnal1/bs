@@ -1,1 +1,17 @@
-1.html
+<virtualhost *:80>
+
+ServerName www.tp5.com
+
+DocumentRoot "/Users/eternal/code/bs/bbs/public"
+
+<directory "/Users/eternal/code/bs/bbs/public">
+
+    Options Indexes FollowSymLinks Includes ExecCGI  
+AllowOverride All
+Require all granted
+
+</directory>
+
+ErrorLog "logs/mysite.local-error_log"
+</virtualhost>
+
