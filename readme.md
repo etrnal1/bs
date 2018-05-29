@@ -82,3 +82,12 @@ captcha_src()
     存在问题  页面不够美观
 
    show.blade.php
+
+
+   ##用户
+
+    ###用户编辑
+
+      panel-body  panel-default panel col-md-10 col-md-offset-1
+
+      panel-heading  glyphicon glyphicon-edit

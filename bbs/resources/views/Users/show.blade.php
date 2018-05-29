@@ -11,7 +11,7 @@
 			<div class="panel-body">
 				<div class="media">
 					<div align="center">
-						<img src="thumnail img-responsive">
+						<img src="thumnail img-responsive" src = "http://tupian.aladd.net/2018/5/17/shaonvchahuatupian.jpg" width="300"  height="300">
 						
 					</div>
 					<div class="media-body">
@@ -62,3 +62,4 @@
 
 
 </div>
+@stop

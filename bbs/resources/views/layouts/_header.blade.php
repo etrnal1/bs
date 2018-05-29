@@ -30,8 +30,13 @@
 			@else
 			<li>
 			<a href="#">{{Auth::user()->name}}</a>
+			<a href="{{route('users.edit',Auth::id())}}">编辑材料</a>
 
-			<ul>
+			<ul class="dropdown-menu" role="menu">
+
+				<li>
+					<a href="{{route('users.edit',Auth::id())}}">编辑材料</a>
+				</li>
 				<li>
 					<a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 						

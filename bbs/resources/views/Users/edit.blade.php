@@ -1,0 +1,57 @@
+@extends('layouts.app')
+@section('title','用户编辑页面')
+@section('content')
+<div class="container">
+	<div class="panel-default panel col-md-10 col-md-offset-1">
+		<div class="panel-heading">
+			<h4>
+				<i class="glyphicon glyphicon-edit">编辑个人资料</i>
+			</h4>
+			
+		</div>
+		@include('common.error')
+		<div class="panel-body">
+			 <form action="{{route('users.update',$user->id)}}" method="POST">
+			 	<input type="hidden" name="_method" value="PUT">
+			 	<input type="hidden" name="_token"  value="{{csrf_token()}}">
+
+			 	<div class="form-group">
+			 		<label for="name-field">
+						用户名			 			
+			 		</label>
+			 		<input type="text" name="name" id="name-field" value="{{old('name',$user->name)}}">
+			 	</div>
+			 	<div class="form-group">
+			 		<label for="name-field">
+						邮箱			 			
+			 		</label>
+			 		<input type="text" name="name" id="email-field" value="{{old('name',$user->email)}}">
+			 	</div>
+			 	<div class="form-group">
+			 		<label for="name-field">
+						个人简介			 			
+			 		</label>
+			 		<textarea name="introuction" id="introduction-field" class="form-control" rows="3">{{old('introduction')}}
+			 			
+			 		</textarea>
+			 		
+			 	</div>
+
+			 	<div class="well well-sm">
+			 		<button type="submit" class="btn btn-primary">保存</button>
+			 	</div>
+			 </form>
+
+
+		</div>
+		
+	</div>	
+
+
+
+
+</div>
+	
+
+
+@stop
