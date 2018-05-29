@@ -59,3 +59,26 @@ captcha_src()
 
           此验证方法  是mews/captcha 自定义表单的验证规则
           
+## 数据库连接管理工具
+
+  WINDOWS  HeidiSQL [:https://pan.baidu.com/s/1jH6o5sa#list/path=%2F]
+
+  MAC   [https://pan.baidu.com/s/1jH6o5sa#list/path=%2FLaravelTutorials%2FWindows&parentPath=%2FLaravelTutorials]
+
+
+  php  artisan migrate
+
+  ###进行个人页面的展示 
+   resource 方法
+
+   与user 表建立联系
+   		App\User替换App\Models\User
+   创建UserController 方法
+      定义show 方法
+       分配数据使用composer
+
+   展示页面 
+
+    存在问题  页面不够美观
+
+   show.blade.php
