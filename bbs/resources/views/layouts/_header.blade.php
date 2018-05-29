@@ -36,7 +36,7 @@
 			<li><a href="{{route('login')}}">登录</a></li>
 			<li><a href="{{route('register')}}">注册</a></li>
 			@else
-			<li class="">
+			<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
                                 <img src="https://fsdhubcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60" class="img-responsive img-circle" width="30px" height="30px">
@@ -47,7 +47,7 @@
 
 			<ul class="dropdown-menu" role="menu">
 
-			
+				<li><a href="{{route('users.edit',Auth::id())}}">编辑资料</a></li>
 				<li>
 					<a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 						
