@@ -28,3 +28,34 @@ asset  使用当前的协议请求地址
 
  php artisan  make:auth
 
+  /home  替代成  / 
+
+### 添加验证码 
+
+  使用第三方扩展包
+  composer require "mews/captcha:~2.0"
+
+执行命令生成 基本的配置文件
+  php artisan vendor:publish --provider='Mews\Captcha\CaptchaServiceProvider'
+
+  下载包
+   写一点js 代码 点击的时候自动换图片
+    ```
+    onclick="this.src='/captcha/flat?'+Math.random()"
+    ```
+captcha_src()
+ 用于生成验证码
+
+ ####后端验证 
+
+  在控制方法里面 找到
+
+  validator  
+
+  里面添加验证方法
+     'captcha.required' => '验证码不能为空',
+            'captcha.captcha' => '请输入正确的验证码',
+
+
+          此验证方法  是mews/captcha 自定义表单的验证规则
+          
