@@ -16,12 +16,11 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email',32)->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('avatar')->nullable();
-            $table->string('introduction')->nullable();
+            
         });
     }
 
@@ -32,6 +31,19 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('users',function(Blueprint $table){
+
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+            
+
+
+        }
+
+        );
     }
 }

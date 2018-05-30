@@ -91,3 +91,34 @@ captcha_src()
       panel-body  panel-default panel col-md-10 col-md-offset-1
 
       panel-heading  glyphicon glyphicon-edit
+
+
+
+
+      ##帖子
+      php artisan make:model Models/Category -m
+      
+
+      ####修复了一个Bug 
+
+      laravel 5.5  mysql 版本低于5.7 ,需要手动配置迁移生成的默认字符串长度
+
+
+      需要修改一处文件，不然容易报user表已经存在的错误
+
+      该文件在app 下面的appserviceprovider 文件
+
+      use Illuminate\Support\Facades\Schema;
+
+      /**
+ * 引导任何应用程序服务。
+ *
+ * @return void
+ */
+public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+
+
+然后执行 php artisan migrate
