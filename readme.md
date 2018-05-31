@@ -137,3 +137,5 @@ php artisan make:migration seed_categories_data
 2.用户的数据工厂 database/factories/UserFactory.php
 3.用户的数据填充 database/seeds/UsersTableSeeder.php
 4.注册数据填充 database/seeds/DatabaseSeeder.php
+###使用belongsTo  方法
+  一个话题属于一个分类  一个话题拥有一个作者
