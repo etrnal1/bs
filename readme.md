@@ -132,3 +132,8 @@ php artisan make:migration seed_categories_data
   truncate()方法清空
    ####使用代码生成器 利用composer
    composer require "summerblue/generator:~0.5" --dev
+#### 批量注入假数据
+ 1. 数据模型 User.php
+2.用户的数据工厂 database/factories/UserFactory.php
+3.用户的数据填充 database/seeds/UsersTableSeeder.php
+4.注册数据填充 database/seeds/DatabaseSeeder.php
