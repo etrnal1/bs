@@ -11,7 +11,8 @@
 			<div class="panel-body">
 				<div class="media">
 					<div align="center">
-						<img src="thumnail img-responsive" src = "http://tupian.aladd.net/2018/5/17/shaonvchahuatupian.jpg" width="300"  height="300">
+						<img src="thumnail img-responsive" src = https://fsdhubcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60"
+						 width="300"  height="300">
 						
 					</div>
 					<div class="media-body">
@@ -21,7 +22,7 @@
                         <hr>
                         <h4><strong>注册于</strong></h4>
                         
-                       <p></p>
+                       <p>{{$user->created_at}}</p>
 					</div>
 					
 				</div>

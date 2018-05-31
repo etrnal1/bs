@@ -11,7 +11,7 @@
 		</div>
 		@include('common.error')
 		<div class="panel-body">
-			 <form action="{{route('users.update',$user->id)}}" method="POST">
+			 <form action="{{route('users.update',$user->id)}}" method="POST" enctype="multipart/form-data">
 			 	<input type="hidden" name="_method" value="PUT">
 			 	<input type="hidden" name="_token"  value="{{csrf_token()}}">
 
@@ -28,13 +28,22 @@
 			 		<input type="text" name="email" id="email-field" value="{{old('name',$user->email)}}">
 			 	</div>
 			 	<div class="form-group">
-			 		<label for="name-field">
+			 		<label for="introduction-field">
 						个人简介			 			
 			 		</label>
 			 		<textarea name="introduction" id="introduction-field" class="form-control" rows="3">{{old('introduction')}}
 			 			
 			 		</textarea>
 			 		
+			 	</div>
+			 	<div class="form-group">
+			 		<label for="" class="avatar-label">用户头像</label>
+                    <input type="file" name="avatar">
+
+                    @if($user->avatar)
+                        <br>
+                        <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
+                    @endif
 			 	</div>
 
 			 	<div class="well well-sm">
