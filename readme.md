@@ -122,3 +122,11 @@ public function boot()
 
 
 然后执行 php artisan migrate
+###添加了用户上传头像的功能
+
+
+###写帖子
+php artisan make:migration seed_categories_data
+ 
+  批量注入假数据
+  truncate()方法清空
