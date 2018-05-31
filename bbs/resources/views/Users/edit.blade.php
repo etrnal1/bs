@@ -22,16 +22,16 @@
 			 		<input type="text" name="name" id="name-field" value="{{old('name',$user->name)}}">
 			 	</div>
 			 	<div class="form-group">
-			 		<label for="name-field">
+			 		<label for="email">
 						邮箱			 			
 			 		</label>
-			 		<input type="text" name="name" id="email-field" value="{{old('name',$user->email)}}">
+			 		<input type="text" name="email" id="email-field" value="{{old('name',$user->email)}}">
 			 	</div>
 			 	<div class="form-group">
 			 		<label for="name-field">
 						个人简介			 			
 			 		</label>
-			 		<textarea name="introuction" id="introduction-field" class="form-control" rows="3">{{old('introduction')}}
+			 		<textarea name="introduction" id="introduction-field" class="form-control" rows="3">{{old('introduction')}}
 			 			
 			 		</textarea>
 			 		
