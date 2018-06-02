@@ -53,14 +53,19 @@
 		<!-- 用户发布数据 -->
 		 <div class="panel-default panel">
 		 	<div class="panel-body">
-		 		  暂无数据
+		 		 <ul class="nav nav-tabs">
+		 		 	<li class="active">
+		 		 		<a href="">他的话题</a>	
+		 		 	</li>
+		 		 	<li><a href="">他的回复</a></li>
+		 		 </ul>
+		 		@include('users._topics',['topics'=>$user->topics()->recent()->paginate(5)])
 		 	</div>
 		 	
 		 </div>
 		
 
 	</div>
-
+@stop
 
 </div>
-@stop
