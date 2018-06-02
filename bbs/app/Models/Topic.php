@@ -6,6 +6,12 @@ class Topic extends Model
 {
     protected $fillable = ['title', 'body', 'user_id', 'category_id', 'reply_count', 'view_count', 'last_reply_user_id', 'order', 'excerpt', 'slug'];
 
+//一个帖子可以有多个回复
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
 
 /**
  * [scopeWithOrder description]不同的排序，使用不同的数据读取逻辑

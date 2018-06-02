@@ -31,4 +31,10 @@ class User extends Authenticatable
         //用户与话题是一对多的联系
         return $this->hasMany(Topic::class);
     }
+
+    //一个用户拥有多条评论
+    public function replies()
+    {
+     return $this->hasMany(Reply::class);
+    }
 }
