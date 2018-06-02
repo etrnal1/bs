@@ -139,3 +139,83 @@ php artisan make:migration seed_categories_data
 4.注册数据填充 database/seeds/DatabaseSeeder.php
 ###使用belongsTo  方法
   一个话题属于一个分类  一个话题拥有一个作者
+
+
+  ### 新建帖子 下面不允许修改
+
+    user_id —— 文章的作者，我们不希望文章的作者可以被随便指派；
+    last_reply_user_id —— 最后回复的用户 ID，将有程序来维护；
+    order —— 文章排序，将会是管理员专属的功能；
+    reply_count —— 回复数量，程序维护；
+    view_count —— 查看数量，程序维护；
+
+
+
+##模板 
+    @extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <h2 class="text-center">
+                    <i class="glyphicon glyphicon-edit"></i>
+                    @if($topic->id)
+                        编辑话题
+                    @else
+                        新建话题
+                    @endif
+                </h2>
+
+                <hr>
+
+                @include('common.error')
+
+                @if($topic->id)
+                    <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8">
+                        <input type="hidden" name="_method" value="PUT">
+                @else
+                    <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
+                @endif
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="title" value="{{ old('title', $topic->title ) }}" placeholder="请填写标题" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="category_id" required>
+                            <option value="" hidden disabled selected>请选择分类</option>
+                            @foreach ($categories as $value)
+                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="body" class="form-control" id="editor" rows="3" placeholder="请填入至少三个字符的内容。" required>{{ old('body', $topic->body ) }}</textarea>
+                    </div>
+
+                    <div class="well well-sm">
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+
+
+
+###模型
+excerpt 字段存储的是话题的摘录，将作为文章页面的 description 元标签使用，有利于 SEO 搜索引擎优化。 摘录由文章内容中自动生成，生成的时机是在话题数据存入数据库之前。 我们将使用 Eloquent 的 观察器 来实现此功能。
+
+Eloquent 模型会触发许多事件（Event），我们可以对模型的生命周期内多个时间点进行监控： creating, created, updating, updated, saving, saved, deleting, deleted, restoring, restored。 事件让你每当有特定的模型类在数据库保存或更新时，执行代码。 当一个新模型被初次保存将会触发 creating 以及 created 事件。 如果一个模型已经存在于数据库且调用了 save 方法，将会触发 updating 和 updated 事件。 在这两种情况下都会触发 saving 和 saved 事件。
+
+Eloquent 观察器允许我们对给定模型中进行事件监控，观察者类里的方法名对应 Eloquent 想监听的事件。 每种方法接收 model 作为其唯一的参数。 代码生成器已经为我们生成了一个观察器文件，并在 AppServiceProvider 中注册。 接下来我们要定制此观察器，在 Topic 模型保存时触发的 saving 事件中，对 excerpt 字段进行赋值：
