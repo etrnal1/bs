@@ -1,11 +1,8 @@
-.
-.
+=
 <div class="row">
 
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs author-info">
-        .
-        .
-        .
+      
     </div>
 
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
@@ -26,4 +23,4 @@
 
     </div>
 </div>
-@stop
+
