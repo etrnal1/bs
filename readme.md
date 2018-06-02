@@ -232,3 +232,15 @@ Eloquent 观察器允许我们对给定模型中进行事件监控，观察者�
                             @endforeach
                         </select>
                     </div>
+
+  ### 配置了百度翻译
+
+     安装转换拼音包
+     拼音方案生成优化描述
+     composer require "overtrue/pinyin:~3.0"
+
+     百度翻译包  请求百度翻译接口
+     composer require "guzzlehttp/guzzle:~6.3"
+
+     laravel 对列表
+     composer require "laravel/horizon:~1.0"
