@@ -34,12 +34,18 @@
                         </a>
                         <span> • </span>
                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        <span class="timeago" title="最后活跃于">{{ $topic->updated_at->diffForHumans() }}</span>
+                        <span class="timeago" title="最后活跃于">{{ $topic->updated_at }}</span>
                     </div>
 
+                    <div>
+                    	<a href="{{route('categories.show',$topic->category->id)}}" title="{{$topic->category->name}}"></a>
+                    	<!-- <span class="glyphicon glyphicon-folder-open" aria-hiden="true">
+                    		
+                    	</span> -->
+                    </div>
                 </div>
             </li>
-
+            
             @if ( ! $loop->last)
                 <hr>
             @endif
@@ -48,7 +54,5 @@
     </ul>
 
 @else
-   <div class="empty-block">暂无数据</div>
+   <div class="empty-block">暂无数据 ~_~ </div>
 @endif
-
- 
