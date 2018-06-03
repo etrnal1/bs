@@ -267,3 +267,14 @@ model_has_permissions —— 模型与权限关联表，一个模型能拥有多
  添加provider
 ####生成配置文件
  php artisan vendor:publish --provider="VIACreative\SudoSu\ServiceProvider"
+ ####模板调用
+
+
+
+ ###安装管理后台
+ composer require "summerblue/administrator:~1.1"
+###生成配置
+ php artisan vendor:publish --provider="Frozennode\Administrator\AdministratorServiceProvider"
+
+
+mkdir config/administrator config/administrator/settings
