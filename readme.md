@@ -262,3 +262,8 @@ model_has_permissions —— 模型与权限关联表，一个模型能拥有多
   php artisan migrate
   生成配置信息
  php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
+####使用用户切换工具 sudo-su
+ composer require "viacreative/sudo-su:~1.1"
+ 添加provider
+####生成配置文件
+ php artisan vendor:publish --provider="VIACreative\SudoSu\ServiceProvider"
