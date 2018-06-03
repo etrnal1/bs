@@ -1,2 +1,3 @@
 
 *.json
+bbs/resources/views/topics/show.blade.php

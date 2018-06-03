@@ -10,9 +10,7 @@
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
 
         <div class="panel panel-default">
-            .
-            .
-            .
+            <h1>最新回复</h1>
         </div>
 
         {{-- 用户回复列表 --}}
