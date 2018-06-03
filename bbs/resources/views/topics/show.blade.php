@@ -1,4 +1,11 @@
 @extends('layouts.app')
+<<<<<<< HEAD
+=======
+
+@section('title', $topic->title)
+@section('description', $topic->excerpt)
+
+>>>>>>> master
 @section('content')
 @section('title','回复')
 <div class="row">
@@ -9,6 +16,7 @@
 
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
 
+<<<<<<< HEAD
         <div class="panel panel-default">
             <h1>最新回复</h1>
         </div>
@@ -18,10 +26,68 @@
             <div class="panel-body">
                 @include('topics._reply_box', ['topic' => $topic])
                 @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+=======
+<div class="row">
+
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs author-info">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="text-center">
+                    作者：{{ $topic->user->name }}
+                </div>
+                <hr>
+                <div class="media">
+                    <div align="center">
+                        <a href="{{ route('users.show', $topic->user->id) }}">
+                            <img class="thumbnail img-responsive" src="{{ $topic->user->avatar }}" width="300px" height="300px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1 class="text-center">
+                    {{ $topic->title }}
+                </h1>
+
+                <div class="article-meta text-center">
+                    {{ $topic->created_at }}
+                    ⋅
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                    {{ $topic->reply_count }}
+                </div>
+
+                <div class="topic-body">
+                    {!! $topic->body !!}
+                </div>
+
+                <div class="operate">
+                    <hr>
+                    <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs" role="button">
+                        <i class="glyphicon glyphicon-edit"></i> 编辑
+                    </a>
+
+                    <form action="{{route('topics.destroy',$topic->id)}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                    <button  type="submit" class="btn-default btn btn-xs" role="button"><i class="glyphicon glyphicon-trash"></i>删除</button>
+                    </form>
+                   
+                </div>
+
+>>>>>>> master
             </div>
         </div>
 
     </div>
 </div>
+<<<<<<< HEAD
 @stop
 
+=======
+@stop
+>>>>>>> master
