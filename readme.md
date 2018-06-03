@@ -16,7 +16,12 @@ php artisan key:generate
 yarn install  
 使用laravel 的Mix 
 
-
+###
+csrf-token  为了方便前端的javascript 脚本获取csrf 令牌
+@yield 占位符
+@include 继承模板
+####创建控制器
+ php artisan make:controller PagesController
 ##layout 
 分为主页 帮助页  头部
 

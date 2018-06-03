@@ -1,36 +1,26 @@
 
 
-<nav class="navbar navbar-default navbar_static-top">
-	<div class="container">
-		<div class="navbar-header">
-
-			<button type=button class="navbar-toggle"
-
-			data-tollage="collapse" data-target="#app-navbar-collapse"
-			>
-				
-				<span>Toggle Naviaatic</span>
-				<span>Toggle Naviaatic</span>
-				<span>Toggle Naviaatic</span>
-				<span>Toggle Naviaatic</span>
-			</button>
-			
-
-		</div>
-
-		<a class="navbar-brand" href={{url('/')}}>
-			
-			larabbs
-		</a>
-		
-
-	</div>
 
 
+<div class="navbar-header">
 
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{ url('/') }}">
+                LaraBBS
+            </a>
+        </div>
 
 	<div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
+           
             <ul class="nav navbar-nav">
                 <li class="{{ active_class(if_route('topics.index')) }}"><a href="{{ route('topics.index') }}">话题</a></li>
                 <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a href="{{ route('categories.show', 1) }}">分享</a></li>
